@@ -8,7 +8,7 @@ public class AWSFactory {
 
     @Inject
     public AWSFactory(Resources resources) {
-        ScriptInjector.fromString(resources.awsJs().getText()).setWindow(ScriptInjector.TOP_WINDOW).inject();
+//        ScriptInjector.fromUrl("https://sdk.amazonaws.com/js/aws-sdk-2.343.0.min.js").setWindow(ScriptInjector.TOP_WINDOW).inject();
     }
 
     public static native AWS getAws() /*-{
