@@ -1,28 +1,30 @@
-package com.gwt.aws.sqs.client.request;
+package de.objectiveit.gwt.aws.sqswrapper.client.request;
 
 import jsinterop.annotations.JsProperty;
 
-public class SendMessageBatchRequestEntry {
-
+public class SendMessageRequest {
 	@JsProperty(name = "MessageBody")
 	private String messageBody;
 
-	@JsProperty(name = "Id")
-	private String id;
+	@JsProperty(name = "QueueUrl")
+	private String queueUrl;
+
+	@JsProperty(name = "DelaySeconds")
+	private Integer delaySeconds;
 
 	@JsProperty(name = "MessageDeduplicationId")
 	private String messageDeduplicationId;
 
 	@JsProperty(name = "MessageGroupId")
 	private String messageGroupId;
-
-	public SendMessageBatchRequestEntry(String id, String messageBody) {
+	
+	public SendMessageRequest(String queueUrl, String messageBody) {
 		this();
-		this.setId(id);
+		this.setQueueUrl(queueUrl);
 		this.setMessageBody(messageBody);
 	}
 
-	public SendMessageBatchRequestEntry() {
+	public SendMessageRequest() {
 		super();
 	}
 
@@ -32,6 +34,22 @@ public class SendMessageBatchRequestEntry {
 
 	public void setMessageBody(String messageBody) {
 		this.messageBody = messageBody;
+	}
+
+	public String getQueueUrl() {
+		return queueUrl;
+	}
+
+	public void setQueueUrl(String queueUrl) {
+		this.queueUrl = queueUrl;
+	}
+
+	public Integer getDelaySeconds() {
+		return delaySeconds;
+	}
+
+	public void setDelaySeconds(Integer delaySeconds) {
+		this.delaySeconds = delaySeconds;
 	}
 
 	public String getMessageDeduplicationId() {
@@ -49,13 +67,4 @@ public class SendMessageBatchRequestEntry {
 	public void setMessageGroupId(String messageGroupId) {
 		this.messageGroupId = messageGroupId;
 	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
 }

@@ -6,7 +6,7 @@
 	<inherits name='com.google.gwt.user.User' />
 	<inherits name='com.google.gwt.inject.Inject' />
 
-	<entry-point class='com.gwt.aws.sqs.client.SQSWrapper' />
+	<entry-point class='de.objectiveit.gwt.aws.sqswrapper.client.SQSWrapper' />
 
 	<!-- Specify the paths for translatable code -->
 	<source path='client' />

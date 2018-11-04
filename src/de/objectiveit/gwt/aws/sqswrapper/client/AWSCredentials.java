@@ -1,4 +1,4 @@
-package com.gwt.aws.sqs.client;
+package de.objectiveit.gwt.aws.sqswrapper.client;
 
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;

@@ -1,13 +1,13 @@
-package com.gwt.aws.sqs.client;
+package de.objectiveit.gwt.aws.sqswrapper.client;
 
-import com.gwt.aws.sqs.client.request.CreateQueueRequest;
-import com.gwt.aws.sqs.client.request.DeleteMessageBatchRequest;
-import com.gwt.aws.sqs.client.request.DeleteMessageRequest;
-import com.gwt.aws.sqs.client.request.ListQueuesRequest;
-import com.gwt.aws.sqs.client.request.ReceiveMessageRequest;
-import com.gwt.aws.sqs.client.request.SendMessageBatchRequest;
-import com.gwt.aws.sqs.client.request.SendMessageRequest;
-import com.gwt.aws.sqs.client.response.ReceiveMessageResponse;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.CreateQueueRequest;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.DeleteMessageBatchRequest;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.DeleteMessageRequest;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.ListQueuesRequest;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.ReceiveMessageRequest;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.SendMessageBatchRequest;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.SendMessageRequest;
+import de.objectiveit.gwt.aws.sqswrapper.client.response.ReceiveMessageResponse;
 
 import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsType;

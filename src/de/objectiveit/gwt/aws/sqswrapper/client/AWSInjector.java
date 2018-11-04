@@ -1,4 +1,4 @@
-package com.gwt.aws.sqs.client;
+package de.objectiveit.gwt.aws.sqswrapper.client;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.inject.client.GinModules;

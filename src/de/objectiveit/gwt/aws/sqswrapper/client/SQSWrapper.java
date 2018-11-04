@@ -1,4 +1,4 @@
-package com.gwt.aws.sqs.client;
+package de.objectiveit.gwt.aws.sqswrapper.client;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,18 +7,18 @@ import java.util.List;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Window;
-import com.gwt.aws.sqs.client.request.CreateQueueAttribute;
-import com.gwt.aws.sqs.client.request.CreateQueueRequest;
-import com.gwt.aws.sqs.client.request.DeleteMessageBatchRequest;
-import com.gwt.aws.sqs.client.request.DeleteMessageBatchRequestEntry;
-import com.gwt.aws.sqs.client.request.DeleteMessageRequest;
-import com.gwt.aws.sqs.client.request.ListQueuesRequest;
-import com.gwt.aws.sqs.client.request.ReceiveMessageRequest;
-import com.gwt.aws.sqs.client.request.SendMessageBatchRequest;
-import com.gwt.aws.sqs.client.request.SendMessageBatchRequestEntry;
-import com.gwt.aws.sqs.client.request.SendMessageRequest;
-import com.gwt.aws.sqs.client.response.ReceiveMessageResponse;
-import com.gwt.aws.sqs.client.response.SQSMessage;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.CreateQueueAttribute;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.CreateQueueRequest;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.DeleteMessageBatchRequest;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.DeleteMessageBatchRequestEntry;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.DeleteMessageRequest;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.ListQueuesRequest;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.ReceiveMessageRequest;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.SendMessageBatchRequest;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.SendMessageBatchRequestEntry;
+import de.objectiveit.gwt.aws.sqswrapper.client.request.SendMessageRequest;
+import de.objectiveit.gwt.aws.sqswrapper.client.response.ReceiveMessageResponse;
+import de.objectiveit.gwt.aws.sqswrapper.client.response.SQSMessage;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -36,8 +36,8 @@ public class SQSWrapper implements EntryPoint {
 		
 		//setting up credentials
 		AWSCredentials credentials = injector.getAWSCredentials();
-		credentials.accessKeyId = "AKIAIZMPTS3FBSPNXWQA";
-		credentials.secretAccessKey = "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";
+		credentials.accessKeyId = "";
+		credentials.secretAccessKey = "";
 		credentials.sessionToken = ""; // SET STS SESSION TOKEN HERE - Blank or null if using iam credentials
 
 		final Options options = new Options(credentials, "us-east-1");

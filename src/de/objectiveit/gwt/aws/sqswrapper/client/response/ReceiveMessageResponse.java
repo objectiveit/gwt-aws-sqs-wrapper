@@ -1,4 +1,4 @@
-package com.gwt.aws.sqs.client.response;
+package de.objectiveit.gwt.aws.sqswrapper.client.response;
 
 import jsinterop.annotations.JsFunction;
 import jsinterop.annotations.JsProperty;

@@ -1,4 +1,4 @@
-package com.gwt.aws.sqs.client;
+package de.objectiveit.gwt.aws.sqswrapper.client;
 
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.inject.Provides;
