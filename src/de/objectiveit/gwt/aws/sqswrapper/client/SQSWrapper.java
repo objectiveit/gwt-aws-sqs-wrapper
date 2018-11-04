@@ -25,7 +25,7 @@ import de.objectiveit.gwt.aws.sqswrapper.client.response.SQSMessage;
  */
 public class SQSWrapper implements EntryPoint {
 
-	private static final String QUEUE_URL = "https://sqs.us-east-1.amazonaws.com/619710014582/testQueue";
+	private static final String QUEUE_URL = ""; // TODO use a valid queue URL
 	AWSInjector injector;
 
 	public void onModuleLoad() {
@@ -36,8 +36,8 @@ public class SQSWrapper implements EntryPoint {
 		
 		//setting up credentials
 		AWSCredentials credentials = injector.getAWSCredentials();
-		credentials.accessKeyId = "";
-		credentials.secretAccessKey = "";
+		credentials.accessKeyId = ""; // TODO use a valid access key
+		credentials.secretAccessKey = ""; // TODO use a valid secret access key
 		credentials.sessionToken = ""; // SET STS SESSION TOKEN HERE - Blank or null if using iam credentials
 
 		final Options options = new Options(credentials, "us-east-1");
@@ -47,7 +47,7 @@ public class SQSWrapper implements EntryPoint {
 //		createQueue();
 //		listQueues();
 //		sendMessageToQueue();
-		sendBatchMessageToQueue();
+//		sendBatchMessageToQueue();
 //		receiveMessage();
 //		receiveAndDeleteMessage();
 		receiveAndDeleteBatchMessage();
