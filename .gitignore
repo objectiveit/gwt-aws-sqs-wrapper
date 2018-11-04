@@ -26,4 +26,5 @@ gwt-unitCache/*
 test-classes/*
 war/sqswrapper/*
 war/WEB-INF/classes/*
+.settings/*
 

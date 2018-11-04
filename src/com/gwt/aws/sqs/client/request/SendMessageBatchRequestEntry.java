@@ -10,9 +10,6 @@ public class SendMessageBatchRequestEntry {
 	@JsProperty(name = "Id")
 	private String id;
 
-	@JsProperty(name = "DelaySeconds")
-	private Integer delaySeconds;
-
 	@JsProperty(name = "MessageDeduplicationId")
 	private String messageDeduplicationId;
 
@@ -35,14 +32,6 @@ public class SendMessageBatchRequestEntry {
 
 	public void setMessageBody(String messageBody) {
 		this.messageBody = messageBody;
-	}
-
-	public Integer getDelaySeconds() {
-		return delaySeconds;
-	}
-
-	public void setDelaySeconds(Integer delaySeconds) {
-		this.delaySeconds = delaySeconds;
 	}
 
 	public String getMessageDeduplicationId() {

@@ -12,12 +12,6 @@ public class ReceiveMessageRequest {
 	@JsProperty(name = "ReceiveRequestAttemptId")
 	private String receiveRequestAttemptId;
 
-	@JsProperty(name = "VisibilityTimeout")
-	private Integer visibilityTimeout;
-
-	@JsProperty(name = "WaitTimeSeconds")
-	private Integer waitTimeSeconds;
-
 	public ReceiveMessageRequest(String queueUrl) {
 		this.queueUrl = queueUrl;
 	}
@@ -44,22 +38,6 @@ public class ReceiveMessageRequest {
 
 	public void setReceiveRequestAttemptId(String receiveRequestAttemptId) {
 		this.receiveRequestAttemptId = receiveRequestAttemptId;
-	}
-
-	public Integer getVisibilityTimeout() {
-		return visibilityTimeout;
-	}
-
-	public void setVisibilityTimeout(Integer visibilityTimeout) {
-		this.visibilityTimeout = visibilityTimeout;
-	}
-
-	public Integer getWaitTimeSeconds() {
-		return waitTimeSeconds;
-	}
-
-	public void setWaitTimeSeconds(Integer waitTimeSeconds) {
-		this.waitTimeSeconds = waitTimeSeconds;
 	}
 
 }

@@ -36,8 +36,8 @@ public class SQSWrapper implements EntryPoint {
 		
 		//setting up credentials
 		AWSCredentials credentials = injector.getAWSCredentials();
-		credentials.accessKeyId = "<ACCESS KEY>";
-		credentials.secretAccessKey = "<SECRET ACCESS KEY>";
+		credentials.accessKeyId = "AKIAIZMPTS3FBSPNXWQA";
+		credentials.secretAccessKey = "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";
 		credentials.sessionToken = ""; // SET STS SESSION TOKEN HERE - Blank or null if using iam credentials
 
 		final Options options = new Options(credentials, "us-east-1");
