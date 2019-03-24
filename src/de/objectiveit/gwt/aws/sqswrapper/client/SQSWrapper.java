@@ -6,7 +6,10 @@ import java.util.List;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.json.client.JSONObject;
+import com.google.gwt.json.client.JSONValue;
 import com.google.gwt.user.client.Window;
+
 import de.objectiveit.gwt.aws.sqswrapper.client.request.CreateQueueAttribute;
 import de.objectiveit.gwt.aws.sqswrapper.client.request.CreateQueueRequest;
 import de.objectiveit.gwt.aws.sqswrapper.client.request.DeleteMessageBatchRequest;
@@ -25,7 +28,9 @@ import de.objectiveit.gwt.aws.sqswrapper.client.response.SQSMessage;
  */
 public class SQSWrapper implements EntryPoint {
 
-	private static final String QUEUE_URL = ""; // TODO use a valid queue URL
+	private static final String QUEUE_URL = ""; // TODO use a
+																											// valid
+																											// queue URL
 	AWSInjector injector;
 
 	public void onModuleLoad() {
@@ -33,8 +38,8 @@ public class SQSWrapper implements EntryPoint {
 		injector = AWSInjector.INSTANCE;
 
 		final AWS aws = injector.getAWS();
-		
-		//setting up credentials
+
+		// setting up credentials
 		AWSCredentials credentials = injector.getAWSCredentials();
 		credentials.accessKeyId = ""; // TODO use a valid access key
 		credentials.secretAccessKey = ""; // TODO use a valid secret access key
@@ -48,9 +53,9 @@ public class SQSWrapper implements EntryPoint {
 //		listQueues();
 //		sendMessageToQueue();
 //		sendBatchMessageToQueue();
-//		receiveMessage();
+		receiveMessage();
 //		receiveAndDeleteMessage();
-		receiveAndDeleteBatchMessage();
+//		receiveAndDeleteBatchMessage();
 
 	}
 
@@ -108,13 +113,19 @@ public class SQSWrapper implements EntryPoint {
 	}
 
 	private void receiveMessage() {
-		ReceiveMessageRequest request = new ReceiveMessageRequest(QUEUE_URL);
+		String ATTRIBUTE_NAME = "asa"; // test parameter name
+		ReceiveMessageRequest request = new ReceiveMessageRequest(QUEUE_URL, Arrays.asList(ATTRIBUTE_NAME));
 		injector.getSQS().receiveMessage(request, new ReceiveMessageResponse() {
 			@Override
 			public void response(String error, ReceiveMessageResult data) {
 				GWT.log(error);
+				GWT.log(data.getMessages().length + " messages");
 				for (SQSMessage sqsMessage : data.getMessages()) {
-					GWT.log(sqsMessage.getBody());
+					if (sqsMessage.getMessageAttributes() != null) {
+						JSONValue attributeObj = new JSONObject(sqsMessage.getMessageAttributes()).get(ATTRIBUTE_NAME);
+						if (attributeObj != null)
+							GWT.log(attributeObj.isObject().get("StringValue").isString().stringValue());
+					}
 				}
 			}
 		});

@@ -1,5 +1,7 @@
 package de.objectiveit.gwt.aws.sqswrapper.client.response;
 
+import com.google.gwt.core.client.JavaScriptObject;
+
 import jsinterop.annotations.JsProperty;
 
 public class SQSMessage {
@@ -17,4 +19,7 @@ public class SQSMessage {
 
 	@JsProperty(name = "MD5OfMessageAttributes")
 	public native String getMD5OfMessageAttributes();
+
+	@JsProperty(name = "MessageAttributes")
+	public native JavaScriptObject getMessageAttributes();
 }
